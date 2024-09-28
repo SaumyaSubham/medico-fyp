@@ -4,4 +4,5 @@ pillow
 psycopg2
 google-generativeai
 requests
+bcrypt
 python-dotenv
