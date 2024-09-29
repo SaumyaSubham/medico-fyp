@@ -12,7 +12,7 @@ load_dotenv()
 def connect_db():
     try:
         conn = psycopg2.connect(
-            host="localhost",  # Your PostgreSQL server's address
+            host=os.getenv("MyDB_HOST"),  # Your PostgreSQL server's address
             database=os.getenv("MyDB"),  # Your DB name
             user=os.getenv("MyDB_USER"),  # Your DB username
             password=os.getenv("MyDB_PASS"),  # Your DB password
@@ -139,7 +139,7 @@ def profile_page():
     conn = connect_db()
     if conn:
         create_user_profile_table(conn)
-        create_appointments_table(conn)  # Ensure the appointments table exists
+        create_appointments_table(conn)  # Make sure this line is here
         conn.close()
 
     # Display the logo
@@ -152,9 +152,7 @@ def profile_page():
         profile = fetch_user_profile(username)
 
         if profile:
-            # Unpack only available fields and provide default values for missing ones
-            name, email, medical_history, prescriptions = profile[:4]
-            last_updated = profile[4] if len(profile) > 4 else None
+            name, email, medical_history, prescriptions, last_updated = profile
         else:
             st.info("No profile information found. Please update your details.")
             name, email, medical_history, prescriptions, last_updated = "", "", "", None
@@ -171,7 +169,7 @@ def profile_page():
 
         # Notify user when they can update name and email
         if not allow_name_email_update:
-            days_left = 20 - (datetime.datetime.now() - last_updated).days if last_updated else 0
+            days_left = 20 - (datetime.datetime.now() - last_updated).days
             st.info(f"You can update your name and email in {days_left} days.")
 
         # Save profile data
