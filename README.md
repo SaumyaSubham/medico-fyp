@@ -9,7 +9,7 @@ MediCo is designed to be secure, offering protected user authentication for data
 
 **Ready to experience the future of healthcare? Visit MediCo now!**
 
-[MediCo Deployment Link](https://medico-web.onrender.com/)
+[https://medico-web.onrender.com/](https://medico-web.onrender.com/) \
 **Please note:** While the AI chatbot offers insights and suggestions, it is not a substitute for professional medical advice. Always consult with a qualified healthcare professional for any medical concerns.
 
 ## Features
