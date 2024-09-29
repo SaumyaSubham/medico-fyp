@@ -95,13 +95,13 @@ MediCo/
 ## Sample Screenshots
 
 - **Homepage:**
-![https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png](https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png) \
+![https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png](https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png) 
 
-- **AI Assistant:**
-![https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png](https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png) \
+- **AI Assistant:** \
+![https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png](https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png) 
 
-- **Appointment Management:**
-![https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png](https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png) \
+- **Appointment Management:** \
+![https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png](https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png) 
 
 ![https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png](https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png) \
 
@@ -109,7 +109,7 @@ MediCo/
 - Frontend: Streamlit
 - Backend: PostgreSQL, Python
 - AI Integration: Google Gemini API
-- Deployment: Streamlit Cloud or other hosting services
+- Deployment: Render
 
 ## Contributions
 We welcome contributions to MediCo! Feel free to open a pull request to add features, improve the platform's functionality, or enhance its user experience.
