@@ -103,7 +103,7 @@ MediCo/
 - **Appointment Management:** \
 ![https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png](https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png) 
 
-![https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png](https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png) \
+![https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png](https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png) 
 
 ## Technologies Used
 - Frontend: Streamlit
