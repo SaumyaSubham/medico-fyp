@@ -92,6 +92,18 @@ MediCo/
 └── README.md                  # Project README file
 ```
 
+## Sample Screenshots
+
+- **Homepage:**
+![https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png](https://i.postimg.cc/jq77zpRd/Screenshot-2024-09-29-030218.png) \
+
+- **AI Assistant:**
+![https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png](https://i.postimg.cc/SswYBrfh/Screenshot-2024-09-29-030050.png) \
+
+- **Appointment Management:**
+![https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png](https://i.postimg.cc/hPR7M2G8/Screenshot-2024-09-29-030123.png) \
+
+![https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png](https://i.postimg.cc/jd6n1yWp/Screenshot-2024-09-29-030149.png) \
 
 ## Technologies Used
 - Frontend: Streamlit
