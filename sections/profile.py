@@ -16,7 +16,7 @@ def connect_db():
             database=os.getenv("MyDB"),  # Your DB name
             user=os.getenv("MyDB_USER"),  # Your DB username
             password=os.getenv("MyDB_PASS"),  # Your DB password
-            port=os.getenv("MyDB_PORT")  # Your DB port
+            port=os.getenv("MyDB_PORT"),  # Your DB port
             sslmode="require"
         )
         return conn
