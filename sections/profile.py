@@ -1,4 +1,4 @@
-import streamlit as st 
+import streamlit as st
 import psycopg2
 import os
 import datetime
@@ -76,7 +76,11 @@ def fetch_user_profile(username):
             """, (username,))
             profile = cur.fetchone()
             cur.close()
-            return profile
+            
+            # Ensure five elements by filling in None for any missing values
+            if profile is None:
+                return ("", "", "", "", None)
+            return profile + (None,) * (5 - len(profile))
         except Exception as e:
             st.error(f"Error fetching user profile: {e}")
             return None
@@ -151,11 +155,11 @@ def profile_page():
         # Fetch user profile data
         profile = fetch_user_profile(username)
 
-        if profile:
+        if profile and len(profile) == 5:
             name, email, medical_history, prescriptions, last_updated = profile
         else:
-            st.info("No profile information found. Please update your details.")
-            name, email, medical_history, prescriptions, last_updated = "", "", "", None
+            st.info("No profile information found or incomplete data. Please update your details.")
+            name, email, medical_history, prescriptions, last_updated = "", "", "", "", None
 
         # Check if the user can update name and email
         allow_name_email_update = can_update_name_email(last_updated)
