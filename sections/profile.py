@@ -17,6 +17,7 @@ def connect_db():
             user=os.getenv("MyDB_USER"),  # Your DB username
             password=os.getenv("MyDB_PASS"),  # Your DB password
             port=os.getenv("MyDB_PORT")  # Your DB port
+            sslmode="require"
         )
         return conn
     except Exception as e:
