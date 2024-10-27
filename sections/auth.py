@@ -1,31 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import psycopg2
 import bcrypt
-import os
-from utils import display_logo
-from dotenv import load_dotenv
+from utils import display_logo, connect_db
 
-# Load the .env file
-load_dotenv()
-
-
-# Connect to PostgreSQL database
-def connect_db():
-    try:
-        conn = psycopg2.connect(
-            host=os.getenv("MyDB_HOST"),  # Or your PostgreSQL server's address
-            database=os.getenv("MyDB"),
-            user=os.getenv("MyDB_USER"),  # Replace with your DB username
-            password=os.getenv("MyDB_PASS"),  # Replace with your DB password
-            port=os.getenv("MyDB_PORT")  # Or the port you're using
-        )
-        return conn
-    except Exception as e:
-        st.error(f"Error connecting to the database: {e}")
-        return None
-
-# Create user table if it doesn't exist
 def create_user_table(conn):
     try:
         cur = conn.cursor()
@@ -41,7 +18,6 @@ def create_user_table(conn):
     except Exception as e:
         st.error(f"Error creating users table: {e}")
 
-# Function to add a new user to the database
 def add_user(username, password):
     conn = connect_db()
     if conn:
@@ -58,7 +34,6 @@ def add_user(username, password):
         finally:
             conn.close()
 
-# Function to authenticate a user
 def authenticate_user(username, password):
     conn = connect_db()
     if conn:
@@ -84,23 +59,20 @@ def authenticate_user(username, password):
             conn.close()
 
 def login_page():
-    # Display the logo
     display_logo()
 
     st.title("Choose Authentication Method")
     if 'logged_in' not in st.session_state:
         st.session_state['logged_in'] = False
    
-    
-    # Use option_menu for authentication options with icons
     option = option_menu(
-    menu_title= None,  # Optional title
-    options=["Login", "Signup", "Guest Mode"],  # Menu options
-    icons=["person", "person-plus", "person-circle"],  # Corresponding icons
-    default_index=0,  # Default selected option
+    menu_title= None,
+    options=["Login", "Signup", "Guest Mode"],
+    icons=["person", "person-plus", "person-circle"],
+    default_index=0,
     styles={
-        "container": {"padding": "0px", "background-color": "#2c2f33"},  # Darker background
-        "icon": {"color": "white", "font-size": "18px"},  # Icons styling
+        "container": {"padding": "0px", "background-color": "#2c2f33"},
+        "icon": {"color": "white", "font-size": "18px"},
         "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "color": "#4CAF50"},
         "nav-link-selected": {"background-color": "#4CAF50", "color": "white"},
     }
@@ -135,3 +107,6 @@ def guest_mode():
     st.session_state['logged_in'] = True
     st.session_state['username'] = "Guest"
     st.success("Guest mode activated! You have limited access.")
+
+if __name__ == "__main__":
+    login_page()
